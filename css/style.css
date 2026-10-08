@@ -1,0 +1,905 @@
+﻿/* style.css */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'League Spartan', 'Montserrat', sans-serif;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-warning {
+    background-color: var(--color-accent-hover);
+    color: var(--color-white);
+}
+.btn-warning:hover {
+    background-color: #e59a00;
+}
+.btn-primary {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    width: 100%;
+}
+.btn-primary:hover {
+    background-color: #005a26;
+}
+.btn-outline {
+    background-color: var(--color-transparent);
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+    padding: 10px 20px;
+}
+.btn-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary-light);
+}
+
+/* ================= SCHEDULE & OFFERS ================= */
+.schedule-offers {
+    background: linear-gradient(180deg, #e4f0e7 0%, #b2d5be 50%, #528c68 100%);
+    padding: 0 0 60px 0;
+}
+
+.schedule-banner {
+    background-image: linear-gradient(135deg, rgba(255,216,0,1) 0%, rgba(253,245,160,1) 48%, rgba(255,216,0,1) 100%);
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2); /* Đổ bóng mạnh hơn cho dải băng vàng */
+    margin-bottom: 40px;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+.section-title-yellow {
+    color: var(--color-primary);
+    font-family: 'Arial Black', Arial, sans-serif; 
+    font-size: 48px; /* Tiếp tục tăng to hơn */
+    letter-spacing: 2px; /* Kéo giãn khoảng cách giữa các chữ cái */
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.schedule-container {
+    margin-bottom: 40px;
+}
+
+.schedule-cards {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #d4e8d9;
+    border: 1.5px solid var(--color-primary-dark);
+    border-radius: 15px;
+    width: 320px;
+    padding: 30px 20px 40px 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    margin-bottom: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+    padding-bottom: 0;
+    z-index: 1; /* For stacking context */
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    width: 75%;
+    height: 4px; 
+    background-color: #0a6438; 
+    /* Viền trắng dày 4px bao quanh, sau đó đổ bóng xéo xuống dưới phải */
+    box-shadow: 
+        0 0 0 4px #ffffff, 
+        2px 2px 0 4px #063a20,
+        3px 3px 0 4px #063a20,
+        4px 4px 0 4px #063a20,
+        5px 5px 0 4px #063a20,
+        6px 6px 0 4px #063a20;
+    z-index: -2;
+}
+
+.card h3 {
+    font-family: 'League Spartan', 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    color: #0a6438; 
+    -webkit-text-stroke: 0; 
+    text-transform: none; 
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    text-shadow: none;
+    letter-spacing: 2px;
+}
+
+.card h3::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffffff; /* Ruột trắng */
+    -webkit-text-stroke: 8px #ffffff; /* Viền trắng siêu dày */
+    z-index: -1; /* Nằm dưới chữ chính */
+    /* Bóng 3D đổ xéo xuống dưới góc phải giống ảnh gốc */
+    text-shadow: 
+        1px 1px 0 #063a20,
+        2px 2px 0 #063a20,
+        3px 3px 0 #063a20,
+        4px 4px 0 #063a20,
+        5px 5px 0 #063a20,
+        6px 6px 0 #063a20,
+        7px 7px 0 #063a20,
+        8px 8px 0 #063a20;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.pill {
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: linear-gradient(180deg, #ffea75 0%, #ffc107 100%);
+    color: var(--color-primary-dark);
+    font-weight: 900;
+    font-size: 24px;
+    padding: 10px 40px;
+    border-radius: 50px;
+    border: 1.5px solid var(--color-primary-dark);
+    display: inline-block;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.25);
+    width: 220px;
+    text-align: center;
+}
+
+.schedule-info {
+    font-size: 20px;
+    color: var(--color-primary-dark);
+}
+
+/* OFFERS */
+.offers-container {
+    text-align: center;
+}
+
+.offers-title {
+    font-size: 32px;
+    color: var(--color-primary);
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.highlight-bg {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 5px 15px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.offers-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.offers-list li {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 900;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.offers-list .highlight-bg::before {
+    content: "•";
+    margin-right: 10px;
+    color: var(--color-white);
+}
+
+.offers-list .normal-text {
+    color: var(--color-primary);
+}
+
+/* ================= TEACHERS ================= */
+.teachers {
+    padding: 60px 0;
+}
+.teacher-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.teacher-card {    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.teacher-img-box {
+    width: 100%;
+    aspect-ratio: 1; /* Hinh vuong bo tron */
+    background: linear-gradient(180deg, #ffffff 0%, #dcf0e3 100%);
+    border-radius: 25px;
+    box-shadow: 0 8px 0px #1e7140, 0 10px 15px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin-bottom: 25px;
+    position: relative;
+    border: 2px solid #58b680;
+}
+
+.teacher-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.teacher-info h4 {
+    color: #0d5c1b;
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+.teacher-title {
+    color: #0d5c1b;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.teacher-desc {
+    color: #555;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .teacher-card {
+        width: calc(50% - 15px);
+        margin-bottom: 30px;
+    }
+    .teacher-info h4 { font-size: 14px; }
+    .teacher-title { font-size: 13px; }
+    .teacher-desc { font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+    .teacher-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* ================= SECTION 3 ================= */
+.sec-schedule {
+    background: linear-gradient(180deg, #c4ebd4 0%, #ffffff 100%);
+    padding-bottom: 50px;
+}
+
+.schedule-title-bar {
+    background: linear-gradient(180deg, #fff2a8 0%, #ffc107 100%);
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    border-bottom: 3px solid #ff9800;
+}
+
+.schedule-title-bar h2 {
+    color: #0d5c1b;
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.schedule-cards-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.schedule-card {
+    background: linear-gradient(180deg, #e6f7ec 0%, #a8deb9 100%);
+    border: 3px solid #0d5c1b;
+    border-radius: 20px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.schedule-card h3 {
+    color: #0d5c1b;
+    font-size: 32px;
+    font-weight: 900;
+    margin: 0 0 10px 0;
+    text-shadow: 1px 1px 0px #fff;
+}
+
+.schedule-line {
+    width: 80%;
+    height: 4px;
+    background-color: #58b680;
+    margin: 0 auto 25px auto;
+    border-radius: 2px;
+}
+
+.schedule-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.schedule-pills .pill {
+    background: linear-gradient(180deg, #ffeb3b 0%, #ffc107 100%);
+    color: #0d5c1b;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 10px 40px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .schedule-cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .schedule-title-bar h2 { font-size: 24px; }
+}
+
+/* ================= SECTION 4 ================= */
+.sec-offers {
+    background: linear-gradient(180deg, #ffffff 0%, #a8deb9 100%);
+    padding-top: 40px;
+    text-align: center;
+}
+
+.offers-header p {
+    color: #0d5c1b;
+    font-size: 24px;
+    margin: 0 0 30px 0;
+}
+
+.offers-header strong {
+    font-weight: 900;
+}
+
+.offers-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.offer-line-1, .offer-line-2, .offer-line-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.text-green {
+    color: #0d5c1b;
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.box-green {
+    background-color: #0d5c1b;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 900;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .offers-header p { font-size: 16px; }
+    .text-green, .box-green { font-size: 20px; }
+    .offer-line-1, .offer-line-2, .offer-line-3 { gap: 10px; }
+}
+
+/* ================= SECTION 6 ================= */
+.sec-bottom-form {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+.bottom-form-container { max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 0 15px;
+}
+
+
+
+.form-title-red {
+    color: #d51c5b;
+    font-size: 22px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+#bottom-form input, #bottom-form select {
+    width: 100%;
+    padding: 10px 15px; /* D?ng b? y h?t Section 2 */
+    margin-bottom: 10px; /* D?ng b? y h?t Section 2 */
+    border: 1px solid #007a33; /* Mau vien y het Section 2 */
+    border-radius: 5px; /* Vien go y het Section 2 mac dinh */
+    font-size: 15px;
+    color: #333;
+    background-color: #ffffff;
+    font-style: italic;
+}
+
+#bottom-form input::placeholder {
+    color: #0d5c1b;
+}
+
+.bottom-form-text h2 {
+    text-align: center;
+    line-height: 1;
+    margin: 0;
+}
+
+.text-3d {
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #ffd13b; /* Mu vng nh?t v m?t hon */
+    font-size: 60px;
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1.5px #1e7140; /* Vi?n xanh l nh?t hn 1 cht */
+    text-shadow: 5px 5px 15px rgba(13, 92, 27, 0.6); /* Bng d? m? to? ra, khng ph?i bng c?ng */
+    line-height: 1.2;
+}
+
+.text-giant {
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #0d5c1b;
+    font-size: 150px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .bottom-form-container {
+        flex-direction: column-reverse; /* Form ? du?i, text ? trn */
+        gap: 30px;
+    }
+    .text-3d {
+    font-family: 'Arial Black', Arial, sans-serif; font-size: 40px; }
+    .text-giant {
+    font-family: 'Arial Black', Arial, sans-serif; font-size: 100px; }
+}
+
+/* ================= SECTION 7 ================= */
+.sec-location {
+    padding: 60px 0;
+    max-width: 1400px; /* N?i thm d? ch?a map to */
+    margin: 0 auto;
+}
+
+.location-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.location-text {
+    text-align: right;
+    width: 700px; /* M? r?ng chi?u ngang kh?i ch? */
+    margin-right: 150px; /* D?ch m?nh sang tri (kho?ng 5cm) */
+    transform: translateY(-60px); /* Knh ln trn (kho?ng 2cm) */
+}
+
+.location-text h2 {
+    color: #0d5c1b;
+    font-size: 75px; /* To hn r?t nhi?u */
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+}
+
+.location-text p {
+    font-family: 'Montserrat', sans-serif; /* m b?o c font m?nh */
+    color: #0d5c1b;
+    font-size: 32px; /* Phng to ln cho cn x?ng v?i ti?u d? kh?ng l? */
+    font-weight: 300; /* Nt m?nh nh trong ?nh */
+    line-height: 1.3; /* C c c dng l?i cho ging ?nh */
+    margin: 0;
+}
+
+.location-map {
+    width: 450px; /* Ngang b?ng d?c */
+    height: 450px; /* Ngang b?ng d?c */
+    overflow: hidden;
+    border-radius: 20px;
+    border: 3px solid #58b680;
+    transform: translate(-90px, -45px); /* Knh ln trn ~1.5cm v d?ch tri ~3cm */
+}
+
+
+
+.cta-right .text-yellow {
+    color: #ffc107;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/* ================= SECTION 8 ================= */
+.sec-footer {
+    background-color: #009933; /* Mu xanh nh?t v tu?i hn m?t cht */
+    padding: 50px 0;
+    color: #ffffff;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.footer-logo img {
+    width: 150px;
+}
+
+.footer-info {
+    flex: 1;
+}
+
+.footer-info h3 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+.footer-info p, .footer-columns p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: #ffffff; /* Mu tr?ng */
+}
+.footer-info > p {
+    margin-bottom: 20px;
+}
+
+.footer-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Xt l?i vo thnh 1 c?t d?c nh ?nh */
+}
+
+.footer-columns h4 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    color: #ffffff; /* Mu tr?ng nh ?nh */
+    font-weight: bold;
+}
+
+.footer-btn {
+    background: linear-gradient(180deg, #ffeb3b 0%, #ffc107 100%);
+    color: #0d5c1b;
+    font-size: 32px;
+    font-weight: 900;
+    font-family: Arial, sans-serif;
+    padding: 15px 40px;
+    border: 3px solid #ffffff; /* Vi?n tr?ng pht sng */
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6); /* Glow tr?ng xunh quanh */
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .location-container { flex-direction: column; text-align: center; gap: 30px; }
+    
+    .location-text {
+        width: 100%;
+        margin-right: 0;
+        transform: none;
+        text-align: center;
+    }
+    
+    .location-text h2 {
+        font-size: 40px;
+    }
+    
+    .location-text p {
+        font-size: 18px;
+    }
+    
+    .location-map {
+        width: 100%;
+        max-width: 400px;
+        height: 350px;
+        transform: none;
+        margin: 0 auto;
+    }
+
+    .footer-container { flex-direction: column; text-align: center; }
+    .footer-columns { flex-direction: column; gap: 15px; text-align: left; }
+}
+
+
+
+/* ================= GALLERY GRID (SECTION 4) ================= */
+.real-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* T? l? ?nh ch? nh?t chu?n */
+    background-color: #dcf0e3; /* Mu n?n ch? ch? c? ?nh */
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-img::before {
+    content: "Ảnh lớp học";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #58b680;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .real-gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mobile hi?n 2 c?t */
+        gap: 10px;
+    }
+}
+
+.real-map-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #dcf0e3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #58b680;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* ================= TEACHERS SLIDER CSS ================= */
+.teachers-slider-wrapper {
+    position: relative;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.teachers-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 20px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.teachers-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.teacher-card {
+    flex: 0 0 calc(25% - 22.5px);
+    scroll-snap-align: start;
+}
+
+.teacher-nav-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: #0d5c1b;
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.teacher-prev { left: 0; }
+.teacher-next { right: 0; }
+
+.teacher-nav-btn:hover {
+    background: #ffc107;
+    color: #0d5c1b;
+}
+
+@media (max-width: 992px) {
+    .teacher-card { flex: 0 0 calc(50% - 15px); }
+}
+
+@media (max-width: 576px) {
+    .teachers-slider-wrapper { padding: 0; }
+    .teacher-card { flex: 0 0 85%; scroll-snap-align: center; }
+    .teacher-nav-btn { display: none; /* ?n nt trn dt, vu?t cho ti?n */ }
+    .teachers-container { padding: 0 15px 20px 15px; gap: 15px; }
+}
+
+/* ================= HOVER EFFECT ================= */
+.teachers-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 15px;
+    flex-wrap: wrap; /* Tr? l?i ch? d? wrap (ko tr??t ngng n?a) */
+    overflow-x: visible;
+}
+
+.teacher-card {
+    width: calc(25% - 22.5px);
+    transition: all 0.3s ease; /* Hi?u ?ng m??t m */
+    border-radius: 25px;
+    padding-bottom: 20px;
+}
+
+.teacher-card:hover {
+    transform: translateY(-15px); /* Hi?u ?ng n?i l?n */
+    box-shadow: 0 15px 30px rgba(13, 92, 27, 0.2); /* Bng ?? s?u h?n */
+    background: linear-gradient(180deg, #ffffff 0%, #e6f7ec 100%);
+}
+
+.teacher-card:hover .teacher-img-box {
+    box-shadow: 0 12px 0px #1e7140, 0 15px 25px rgba(0,0,0,0.3);
+}
+
+.teacher-nav-btn { display: none !important; }
+
+@media (max-width: 992px) {
+    .teacher-card { width: calc(50% - 15px); }
+}
+
+@media (max-width: 576px) {
+    .teacher-card { width: 100%; max-width: 300px; margin: 0 auto; }
+}
+
+
+/* Custom size & pos cho form duoi cung (chi ap dung tren PC) */
+@media (min-width: 769px) {
+    .sec-bottom-form .hero-form-box {
+        width: 630px; /* Tang them 150px tuong duong 4cm */
+        flex-shrink: 0;
+         /* Dich trai manh them 100px nua tuong duong 5cm */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

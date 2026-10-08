@@ -1,0 +1,15 @@
+﻿:root {
+    --color-primary-dark: #004d20;
+    --color-primary: #006338;
+    --color-primary-light: #007a33;
+    --color-accent: #ffcc00;
+    --color-accent-hover: #f7a800;
+    --color-white: #ffffff;
+    --color-text-dark: #333333;
+    --color-text-gray: #555555;
+    --color-bg-light: #f9f9f9;
+    --color-bg-tint: #e0f2f1;
+    --color-bg-green-light: #e8f5e9;
+    --color-border: #cccccc;
+    --color-transparent: transparent;
+}
