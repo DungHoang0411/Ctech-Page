@@ -615,7 +615,7 @@ body {
 
 /* ================= SECTION 8 ================= */
 .sec-footer {
-    background-color: #107e10; /* Mu xanh nh?t v tu?i hn m?t cht */
+    background-color: #0d600de8; /* Mu xanh nh?t v tu?i hn m?t cht */
     padding: 50px 0;
     color: #ffffff;
 }
@@ -667,16 +667,16 @@ body {
 }
 
 .footer-btn {
-    background: linear-gradient(180deg, #ffeb3b 0%, #ffc107 100%);
+    background-image: linear-gradient(0deg, rgba(255,216,0,0.996078431372549) 0%, rgba(253,245,160,0.997929739044207) 48%, rgba(255,216,0,0.9999999999999999) 100%);
     color: #0d5c1b;
-    font-size: 32px;
+    font-size: 40px; /* To hn */
     font-weight: 900;
-    font-family: Arial, sans-serif;
-    padding: 15px 40px;
-    border: 3px solid #ffffff; /* Vi?n tr?ng pht sng */
-    border-radius: 15px;
+    font-family: 'Arial Black', Arial, sans-serif;
+    padding: 30px 60px; /* To hn */
+    border: 4px solid #fdf5a0;
+    border-radius: 0px; /* Hnh vung v?c */
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(255,255,255,0.6); /* Glow tr?ng xunh quanh */
+    filter: drop-shadow(0px 8px 1.5px #004b2b); /* Bng y h?t bn trn */
     line-height: 1.2;
 }
 
@@ -879,6 +879,7 @@ body {
          /* Dich trai manh them 100px nua tuong duong 5cm */
     }
 }
+
 
 
 
