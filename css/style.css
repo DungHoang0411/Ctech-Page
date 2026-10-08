@@ -404,7 +404,7 @@ body {
     padding: 10px 40px;
     border-radius: 50px;
     border: 2px solid #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 1.5px #004b2b;
     width: 80%;
 }
 
@@ -876,6 +876,7 @@ body {
          /* Dich trai manh them 100px nua tuong duong 5cm */
     }
 }
+
 
 
 
