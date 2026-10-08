@@ -1,3 +1,0 @@
-﻿$html = [System.IO.File]::ReadAllText('d:\CUT\index.html', [System.Text.Encoding]::UTF8)
-$html = $html -replace '<h2><span class="text-3d">[^<]+</span><br><span class="text-3d">[^<]+</span><br><span class="text-giant">[^<]+</span></h2>', '<h2><span class="text-3d">ĐĂNG KÝ</span><br><span class="text-3d">HỌC THỬ</span><br><span class="text-giant">0Đ</span></h2>'
-[System.IO.File]::WriteAllText('d:\CUT\index.html', $html, [System.Text.Encoding]::UTF8)
