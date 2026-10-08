@@ -669,16 +669,16 @@ body {
 .footer-btn {
     background-image: linear-gradient(0deg, rgba(255,216,0,0.996078431372549) 0%, rgba(253,245,160,0.997929739044207) 48%, rgba(255,216,0,0.9999999999999999) 100%);
     color: #0d5c1b;
-    font-size: 38px;
+    font-size: 45px;
     font-weight: 900;
     font-family: 'Arial Black', Arial, sans-serif;
     border: 4px solid #fdf5a0;
-    border-radius: 0px; /* Hnh vung (gc nh?n) */
+    border-radius: 25px; /* Bo trn nh ?nh */
     cursor: pointer;
     filter: drop-shadow(0px 8px 1.5px #004b2b);
-    line-height: 1.3;
-    width: 250px; /* Hnh vung tuy?t d?i */
-    height: 250px; /* Hnh vung tuy?t d?i */
+    line-height: 1.1;
+    width: 380px; /* Hnh ch? nh?t to b?n nh ?nh */
+    padding: 25px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -884,6 +884,7 @@ body {
          /* Dich trai manh them 100px nua tuong duong 5cm */
     }
 }
+
 
 
 
