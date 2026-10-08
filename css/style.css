@@ -1,4 +1,637 @@
-﻿/* style.css */
+﻿/* ================= HEADER WRAPPER ================= */
+.header {
+    background-color: #ffffff;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 0 20px;
+}
+
+/* ================= LOGO & PROMO TEXT ================= */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 70px;
+    object-fit: contain;
+}
+
+.promo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.promo-text strong {
+    color: #007a33; 
+    font-size: 26px;
+    font-weight: bold; 
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.promo-text span {
+    color: #007a33; 
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+/* ================= CTA BUTTON ================= */
+.header-btn {
+    background-image: linear-gradient(0deg, rgba(255,216,0,0.996078431372549) 0%, rgba(253,245,160,0.997929739044207) 48%, rgba(255,216,0,0.9999999999999999) 100%);
+    color: #006338; 
+    font-size: 26px;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #006338;
+    text-transform: uppercase;
+    padding: 12px 45px;
+    border: 4px solid #fdf5a0; /* Màu viền được trích xuất từ bảng màu của bạn */
+    border-radius: 29px; 
+    filter: drop-shadow(0px 8px 1.5px #004b2b);
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.header-btn:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0px 10px 3px #004b2b);
+}
+
+.header-btn:active {
+    transform: translateY(1px);
+    filter: drop-shadow(0px 4px 1px #004b2b);
+}
+
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Đẩy nút xuống dưới */
+        height: auto;
+        padding: 15px 10px;
+        gap: 15px;
+        align-items: center; /* Căn giữa nút và toàn bộ cụm trên */
+    }
+    
+    .header-left {
+        /* Giữ nguyên cấu trúc ngang (logo bên trái, chữ bên phải) */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Thu hẹp khoảng cách giữa logo và chữ */
+    }
+    
+    .logo img {
+        height: 55px; /* Thu nhỏ logo */
+    }
+    
+    .promo-text {
+        text-align: left; /* Chữ căn trái đúng như ảnh */
+    }
+    
+    .promo-text strong {
+        font-size: 16px; /* Hạ cỡ chữ tiêu đề */
+    }
+    
+    .promo-text span {
+        font-size: 11px; /* Hạ cỡ chữ dòng dưới */
+        line-height: 1.3;
+    }
+    
+    .header-btn {
+        width: auto; /* Nút không dàn trải hết màn hình */
+        font-size: 16px; /* Chữ trong nút nhỏ lại */
+        padding: 8px 30px;
+        white-space: nowrap; /* Tuyệt đối không cho rớt dòng chữ */
+    }
+}
+
+
+/* ================= HERO SECTION ================= */
+.hero {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(90deg, #004724 0%, #006338 50%, #004724 100%);
+    padding: 30px 0 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; 
+    padding: 0 15px;
+    gap: 15px;
+}
+
+.hero-left {
+    width: 350px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.hero-main-title {
+    display: flex;
+    align-items: stretch; 
+    gap: 25px; 
+    position: relative;
+    margin-left: 0px; 
+}
+
+.star-icon-left { width: 32px; position: absolute; top: -5px; left: -40px; }
+.star-icon-right { width: 40px; position: absolute; bottom: -10px; right: -45px; }
+
+.title-col-left { display: flex; flex-direction: column; justify-content: space-between; text-align: right; padding: 3px 0; }
+.title-col-left h2 { color: #ffffff; font-size: 20px; font-weight: 800; margin: 0; line-height: 1; white-space: nowrap; }
+
+.title-col-right { display: flex; flex-direction: column; justify-content: space-between; text-align: left; position: relative; }
+.title-col-right h1 {
+    font-size: 50px; 
+    font-weight: 900;
+    margin: -10px 0; padding: 10px 0; line-height: 1.1;
+    background-image: linear-gradient(135deg, rgba(255,216,0,1) 0%, rgba(253,245,160,1) 48%, rgba(255,216,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.hero-divider { margin: 15px 0 10px 0; }
+.curved-line-css { width: 250px; height: 22px; border-top: 3px solid #ffffff; border-radius: 50% 50% 0 0; }
+
+.hero-promo h3 { color: #ffffff; font-size: 18px; font-weight: 600; letter-spacing: 1px; margin: 0; text-align: center; }
+.hero-promo h2 {
+    font-size: 26px; font-weight: 900; margin: 5px 0 15px 0; text-align: center;
+    background-image: linear-gradient(135deg, rgba(255,216,0,1) 0%, rgba(253,245,160,1) 48%, rgba(255,216,0,1) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+.star-icon-small { width: 25px; position: absolute; top: -10px; right: -35px; transform: rotate(15deg); }
+
+.hero-badge {
+    background-image: linear-gradient(135deg, rgba(255,216,0,1) 0%, rgba(253,245,160,1) 48%, rgba(255,216,0,1) 100%);
+    color: #004724; font-weight: 800; display: inline-block; padding: 5px 15px; font-size: 11px; border-radius: 30px; margin-bottom: 20px; box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+}
+
+.hero-flags { display: flex; gap: 10px; }
+.hero-flags img { height: 25px; border: 2px solid #fff; border-radius: 4px;
+    #hero-form input::placeholder {
+        color: #007a33;
+    }
+    #hero-form input, #hero-form select {
+        color: #007a33;
+    } box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+
+.hero-center { display: flex; justify-content: center; position: relative; z-index: 2; }
+.hero-girl { max-height: 450px; margin-bottom: -5px; }
+
+.hero-right {
+    width: 480px; 
+    padding-bottom: 45px;
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+}
+.hero-form-box { background: linear-gradient(180deg, #ffffff 0%, #c4ebd4 100%); border-radius: 20px; padding: 25px 30px 40px 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); position: relative; }
+.form-title { color: #d51c5b; font-size: 20px; font-weight: bold; text-align: center; margin-bottom: 20px; text-transform: uppercase; white-space: nowrap; }
+.form-title span { font-size: 32px; font-weight: 900; }
+#hero-form input, #hero-form select { width: 100%; padding: 10px 15px; margin-bottom: 10px; border: 1px solid #007a33; font-size: 15px; color: #333; background-color: #ffffff; font-style: italic; }
+.form-submit-wrapper { position: absolute; bottom: -22px; left: 0; width: 100%; text-align: center; }
+.hero-submit-btn {
+    background-image: linear-gradient(135deg, rgba(255,216,0,1) 0%, rgba(253,245,160,1) 48%, rgba(255,216,0,1) 100%);
+    color: #004724; font-size: 22px; font-weight: bold; padding: 10px 40px; border: none; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.4), inset 0 2px 2px rgba(255,255,255,0.2); transition: 0.2s;
+}
+.hero-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.5), inset 0 2px 2px rgba(255,255,255,0.2); }
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero {
+        padding: 15px 0 0 0;
+    }
+    
+    .hero-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 0; /* Bo khoang cach de cho text va girl overlap nhu trong anh */
+        padding: 0; /* Form box full width hoac co padding rat nho */
+    }
+    
+    /* ---- Nửa trên (Text + Girl) ---- */
+    .hero-left {
+        width: 55%;
+        padding-bottom: 20px;
+        align-items: flex-end; /* Text neo ve phia ben phai de sat co gai */
+        padding-left: 10px;
+    }
+    
+    .hero-main-title {
+        gap: 5px;
+        margin-left: 0;
+    }
+    
+    .star-icon-left { width: 12px; left: -10px; top: 0; }
+    .star-icon-right { width: 15px; right: -15px; bottom: 0; }
+    
+    .title-col-left h2 { font-size: 11px; }
+    .title-col-right h1 { font-size: 28px; margin: 0; padding: 0; }
+    
+    .curved-line-css { width: 130px; height: 8px; border-top: 2px solid #ffffff; margin-right: 10px; }
+    
+    .hero-promo {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+        padding-right: 5px;
+    }
+    
+    .hero-promo h3 { font-size: 9px; }
+    .hero-promo h2 { font-size: 17px; margin: 5px 0; }
+    
+    .hero-badge { font-size: 8px; padding: 4px 8px; margin-bottom: 10px; text-align: center; line-height: 1.2; }
+    
+    .hero-flags { gap: 4px; justify-content: center; margin-right: 5px; }
+    .hero-flags img { height: 16px; border-width: 1px; }
+    
+    .hero-center {
+        width: 45%;
+        display: flex;
+        justify-content: flex-start; /* Co gai neo ve phia ben trai de sat text */
+        position: relative;
+        left: -10px; /* Keo co gai dich vao de overlap giong anh */
+    }
+    
+    .hero-girl {
+        max-height: 230px;
+        width: 115%; /* Phong to mot chut de fill khoang trong */
+        object-fit: contain;
+        object-position: bottom left;
+    }
+    
+    /* ---- Nửa dưới (Form box) ---- */
+    .hero-right {
+        width: 100%; 
+        margin-top: 0; /* Sat vao co gai */
+        padding-bottom: 0;
+    }
+    
+    .hero-form-box { 
+        padding: 20px 15px 40px 15px; 
+        border-radius: 20px 20px 0 0; /* Chi bo tron 2 goc tren giong anh */
+        background: linear-gradient(180deg, #ffffff 0%, #76c596 100%); /* Mau xanh dam hon o duoi */
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .form-title { 
+        font-size: 15px; 
+        margin-bottom: 15px;
+    }
+    .form-title span { 
+        font-size: 22px; 
+    }
+    
+    #hero-form input, #hero-form select {
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        border: 1px solid #007a33;
+        border-radius: 4px;
+    #hero-form input::placeholder {
+        color: #007a33;
+    }
+    #hero-form input, #hero-form select {
+        color: #007a33;
+    }
+    }
+    
+    .form-submit-wrapper {
+        bottom: -18px;
+    }
+    
+    .hero-submit-btn { 
+        font-size: 16px; 
+        padding: 8px 30px; 
+        /* Doi mau nut tu Vang sang Xanh dam */
+        background-image: linear-gradient(180deg, #007a33 0%, #004b2b 100%);
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        text-shadow: none; /* Bo do bong chu vang */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+}
+
+
+/* ================= HIDE/SHOW LOGIC ================= */
+.mobile-only {
+    display: none !important;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .pc-only {
+        display: none !important;
+    }
+    
+    .mobile-only {
+        display: block !important;
+    }
+    
+    .hero-badge.mobile-only {
+        display: inline-block !important;
+    }
+    
+    .hero-flags img.mobile-only {
+        display: inline-block !important;
+    }
+    
+    .hero {
+        padding: 20px 0 0 0;
+    }
+    
+    .hero-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 0;
+        padding: 0 10px;
+    }
+    
+    /* ---- KHỐI CHỮ CỐ ĐỊNH KÍCH THƯỚC ---- */
+    .hero-left {
+        width: 220px; 
+        flex: none;
+        padding-bottom: 20px;
+        align-items: center; 
+        position: relative;
+        z-index: 3;
+        transform: translateX(-25px); /* Dịch toàn bộ cụm chữ sang trái theo yêu cầu */
+    }
+    
+    .hero-main-title {
+        gap: 8px;
+        margin-left: 0;
+        align-items: stretch;
+    }
+    
+    .star-icon-left { width: 14px; left: -12px; top: -5px; }
+    .star-icon-right { width: 18px; right: -15px; bottom: 0; }
+    
+    .title-col-left { padding: 0; }
+    .title-col-left h2 { font-size: 15px; line-height: 1.1; margin: 0; }
+    .title-col-right h1 { font-size: 38px; margin: -5px 0; padding: 5px 0; line-height: 1.1; }
+    
+    .curved-line-css { width: 160px; height: 10px; border-top: 2px solid #ffffff; margin-right: 0; }
+    
+    .hero-promo {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        width: 100%;
+        padding-right: 0;
+    }
+    
+    .hero-promo h3 { font-size: 11px; white-space: nowrap; }
+    .hero-promo h2 { font-size: 21px; margin: 5px 0 8px 0; white-space: nowrap; }
+    
+    .hero-badge { font-size: 9px; padding: 6px 14px; margin-bottom: 12px; white-space: nowrap; }
+    
+    .hero-flags { gap: 5px; justify-content: center; margin-right: 0; }
+    .hero-flags img { height: 18px; border-width: 1px; border-radius: 3px; }
+    
+    /* ---- KHỐI CÔ GÁI CỐ ĐỊNH ---- */
+    .hero-center {
+        width: 170px; /* Khóa chết chiều rộng */
+        flex: none;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: -35px; /* KÉO CÔ GÁI ĐÈ LÊN KHỐI CHỮ */
+        z-index: 2;
+    }
+    
+    .hero-girl {
+        max-height: 250px;
+        width: 100%;
+        object-fit: contain;
+        object-position: bottom left;
+    }
+    
+    /* ---- KHỐI FORM ---- */
+    .hero-right {
+        width: 100%; 
+        max-width: 400px; /* Khóa không cho phình to trên màn hình iPad/Tablet ngang */
+        margin: 5px auto 0 auto; 
+        padding-bottom: 20px;
+        z-index: 4;
+    }
+    
+    .hero-form-box { 
+        padding: 20px 15px 35px 15px; 
+        border-radius: 20px 20px 0 0;
+        background: linear-gradient(180deg, #ffffff 0%, #76c596 100%);
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        margin: 0; 
+    }
+    
+    .form-title.mobile-only { 
+        font-size: 18px; 
+        margin-bottom: 15px;
+        text-align: center;
+        white-space: nowrap; /* Ép chữ nằm trên 1 hàng y như ảnh mẫu */
+        display: block !important;
+    }
+    .form-title.mobile-only span { 
+        font-size: 20px; 
+        color: #d51c5b; /* Màu hồng đậm */
+    }
+    
+    #hero-form input, #hero-form select {
+        padding: 10px 12px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        border: 1px solid #007a33;
+        border-radius: 4px;
+        background-color: #ffffff;
+        color: #007a33;
+    }
+    #hero-form input::placeholder {
+        color: #007a33;
+    }
+    
+    .form-submit-wrapper {
+        bottom: -18px;
+    }
+    
+    .hero-submit-btn { 
+        font-size: 16px; 
+        padding: 10px 30px; 
+        background-image: linear-gradient(180deg, #007a33 0%, #004b2b 100%);
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        text-shadow: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+}
+
+
+
+/* ================= LANGUAGES ================= */
+.languages {
+    padding: 60px 0 0 0;
+    background: linear-gradient(180deg, var(--color-white) 0%, #e8f5ed 30%, #004b2b 100%);
+    overflow-x: hidden; /* Ngăn thanh cuộn ngang nếu ảnh tràn lề màn hình */
+}
+
+.section-title {
+    color: var(--color-primary);
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.flags {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 65px; /* Tiếp tục tăng khoảng cách */
+    flex-wrap: wrap;
+}
+.flags img {
+    width: 160px; /* Tiếp tục phóng to */
+    height: 105px; /* Tiếp tục phóng to */
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35); /* Đổ bóng đậm, rõ nét và lan tỏa hơn */
+    background: var(--color-white);
+}
+
+.languages-content {
+    display: flex;
+    justify-content: center; /* Chỉ cần căn giữa danh sách */
+    align-items: flex-end;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+}
+
+.side-image {
+    position: absolute;
+    bottom: 0; /* Neo chính xác mép dưới cùng của section */
+    z-index: 1;
+    pointer-events: none; 
+}
+.left-girl {
+    left: -90px; /* Dịch sang trái thêm ~5cm */
+}
+.right-man {
+    right: -90px; /* Dịch sang phải thêm ~5cm */
+}
+.side-image img {
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+}
+.left-girl img {
+    height: 505px; /* Giữ nguyên cô gái */
+}
+.right-man img {
+    height: 495px; /* Đàn ông bé đi thêm 10px */
+}
+
+.benefits-list {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    z-index: 2;
+    min-width: 350px;
+}
+
+.benefits-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Ép tất cả thẻ li dài bằng thanh dài nhất */
+    gap: 15px;
+    width: max-content; /* Chỉ giãn vừa đủ thanh dài nhất, không bị bung bét */
+    max-width: 100%;
+}
+
+.benefits-list li {
+    background: var(--color-accent);
+    color: var(--color-primary-dark);
+    margin: 0;
+    padding: 12px 60px; /* Padding đều 2 bên để chữ căn giữa chuẩn xác */
+    border-radius: 50px;
+    font-weight: 700; 
+    font-size: 18px;
+    display: flex; /* Dùng flex để dễ căn chỉnh */
+    align-items: center;
+    justify-content: center; /* Căn chữ ra chính giữa thanh */
+    position: relative; /* Dùng làm gốc cho icon absolute */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.benefits-list li strong {
+    font-weight: 900;
+}
+
+.icon-circle img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.icon-circle {
+    background: var(--color-white);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    border: 2px solid var(--color-border);
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+
+
+
+/* style.css */
 
 /* Reset & Base Styles */
 * {
@@ -884,6 +1517,7 @@ body {
          /* Dich trai manh them 100px nua tuong duong 5cm */
     }
 }
+
 
 
 
