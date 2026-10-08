@@ -671,7 +671,7 @@ body {
     color: #0d5c1b;
     font-size: 45px;
     font-weight: 900;
-    font-family: 'Arial Black', Arial, sans-serif;
+    font-family: 'League Spartan', 'Montserrat', sans-serif;
     border: 4px solid #fdf5a0;
     border-radius: 25px; /* Bo trn nh ?nh */
     cursor: pointer;
@@ -884,6 +884,7 @@ body {
          /* Dich trai manh them 100px nua tuong duong 5cm */
     }
 }
+
 
 
 
