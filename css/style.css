@@ -1555,3 +1555,22 @@ body {
 
 
 
+
+
+/* ================= RESPONSIVE VIEW SWITCHING (PC vs MOBILE) ================= */
+.mobile-view {
+    display: none !important;
+}
+
+.desktop-view {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .desktop-view {
+        display: none !important;
+    }
+    .mobile-view {
+        display: block !important;
+    }
+}
