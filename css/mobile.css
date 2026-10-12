@@ -717,6 +717,8 @@ select:focus-visible {
 }
 
 .schedule-card {
+  width: 100%;
+  max-width: none;
   padding: 20px 15px 20px;
   border: 2px solid var(--green-heading);
   border-radius: 20px;
