@@ -21,7 +21,14 @@
   --yellow: #ffd500;
   --yellow-light: #ffea75;
   --yellow-pale: #fdf5a0;
-  --yellow-benefit: #ffc800;
+  --yellow-benefit-top: #ffd700;
+  --yellow-benefit-bottom: #ffbe00;
+  --yellow-ribbon-border: #fff6a8;
+  --yellow-schedule-pill-border: #fff8b0;
+  --yellow-schedule-pill-bottom: #f5be00;
+  --green-benefit-ink: #00381d;
+  --mint-schedule-top: #daf1e3;
+  --mint-schedule-mid: #aee0c5;
   --yellow-header-top: #fff275;
   --yellow-header-mid: #ffd800;
   --yellow-header-bottom: #f5c400;
@@ -597,7 +604,7 @@ select:focus-visible {
 .languages-section {
   padding-top: 18px;
   padding-bottom: 22px;
-  background: linear-gradient(180deg, var(--white) 0%, #fafffb 54%, var(--mint-light) 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #eaf6f0 50%, #6ec79b 100%);
 }
 
 .language-list {
@@ -645,17 +652,22 @@ select:focus-visible {
 }
 
 .consultant-image {
+  position: relative;
+  z-index: 1;
+  display: block;
   width: calc(100% + var(--page-gutter-double));
   max-width: none;
-  height: 260px;
+  height: clamp(213px, 66.67vw, 287px);
   margin: 0 0 -25px calc(0px - var(--page-gutter));
   object-fit: cover;
   object-position: center top;
 }
 
 .benefit-list {
+  position: relative;
+  z-index: 2;
   display: grid;
-  gap: 3px;
+  gap: 4px;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -663,19 +675,19 @@ select:focus-visible {
 
 .benefit-list li {
   display: flex;
-  min-height: 30px;
+  min-height: 32px;
   align-items: center;
   justify-content: center;
   gap: 0.25em;
-  padding: 3px 10px;
+  padding: 6px 14px;
   border-radius: var(--radius-pill);
-  background: var(--yellow-benefit);
-  box-shadow: 0 2px 3px rgb(117 84 0 / 14%);
-  color: var(--green-deep);
+  background: linear-gradient(180deg, var(--yellow-benefit-top) 0%, var(--yellow-benefit-bottom) 100%);
+  box-shadow: 0 2px 4px rgb(135 95 0 / 22%);
+  color: var(--green-benefit-ink);
   font-family: var(--font-body);
-  font-size: clamp(9.5px, 2.8vw, 11.5px);
+  font-size: clamp(10.5px, 2.8vw, 11px);
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -694,18 +706,19 @@ select:focus-visible {
   min-height: 31px;
   place-items: center;
   margin-bottom: 17px;
-  border-top: 2px solid var(--yellow-pale);
-  border-bottom: 2px solid var(--yellow-pale);
-  background: linear-gradient(180deg, var(--yellow-pale), var(--yellow));
+  border-top: 3px solid var(--yellow-ribbon-border);
+  border-bottom: 3px solid var(--yellow-ribbon-border);
+  background: linear-gradient(180deg, #ffd800 0%, #fdf49d 50%, #ffd800 100%);
   box-shadow: 0 4px 0 var(--green-cta-deep);
 }
 
 .ribbon h2 {
   margin: 0;
-  color: var(--green-brand);
+  color: var(--green-deep);
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 900;
+  letter-spacing: 0.5px;
   line-height: 1;
   text-align: center;
 }
@@ -717,45 +730,41 @@ select:focus-visible {
 }
 
 .schedule-card {
-  width: 100%;
-  max-width: none;
-  padding: 20px 15px 20px;
-  border: 2px solid var(--green-heading);
+  padding: 16px 16px 20px;
+  border: 2px solid var(--green-brand);
   border-radius: 20px;
-  background: linear-gradient(165deg, var(--mint-light) 0%, var(--mint-strong) 100%);
-  box-shadow: 0 4px 0 rgb(0 71 36 / 16%);
+  background: linear-gradient(175deg, var(--mint-schedule-top) 0%, var(--mint-schedule-mid) 50%, var(--mint-strong) 100%);
+  box-shadow: 0 5px 12px rgb(0 75 43 / 15%);
   text-align: center;
 }
 
 .schedule-card h3 {
   margin: 0;
-  color: var(--white);
+  color: #ffffff;
   font-family: var(--font-display);
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 900;
   line-height: 1.1;
-  -webkit-text-stroke: 1.5px var(--green-heading);
+  -webkit-text-stroke: 1.5px var(--green-shadow);
   text-shadow: 2px 3px 0 var(--green-shadow);
 }
 
 .schedule-rule {
   position: relative;
   width: 72%;
-  height: 3px;
-  margin: 0 auto 14px;
-  background: linear-gradient(90deg, transparent, var(--green-heading) 15%, var(--green-heading) 85%, transparent);
-  box-shadow: 0 2px 0 rgb(255 255 255 / 90%);
+  height: 2px;
+  margin: 4px auto 14px;
+  background: var(--green-shadow);
 }
 
 .schedule-rule::after {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 8px;
-  height: 8px;
-  border: 2px solid var(--mint-light);
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--green-heading);
+  background: var(--green-shadow);
   content: "";
   transform: translate(-50%, -50%);
 }
@@ -770,19 +779,25 @@ select:focus-visible {
 
 .schedule-days li {
   display: grid;
-  width: min(56%, 220px);
+  width: min(75%, 210px);
   min-height: 40px;
   place-items: center;
   justify-self: center;
-  border: 2px solid var(--yellow-pale);
+  border: 2px solid var(--yellow-schedule-pill-border);
   border-radius: var(--radius-pill);
-  background: linear-gradient(180deg, var(--yellow-header-top), var(--yellow));
-  box-shadow: 0 4px 0 var(--green-cta-deep);
-  color: var(--green-heading);
+  background: linear-gradient(180deg, #fff275 0%, #ffd800 55%, var(--yellow-schedule-pill-bottom) 100%);
+  box-shadow: 0 5px 0 var(--green-cta-deep), 0 7px 10px rgb(0 75 43 / 25%);
+  color: var(--green-cta-deep);
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 900;
+  letter-spacing: 0.5px;
   line-height: 1;
+}
+
+.schedule-days li:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 var(--green-cta-deep);
 }
 
 .schedule-info {

@@ -1,4 +1,5 @@
-﻿:root {
+:root {
+    /* Base Color Tokens */
     --color-primary-dark: #004d20;
     --color-primary: #006338;
     --color-primary-light: #007a33;
@@ -12,4 +13,66 @@
     --color-bg-green-light: #e8f5e9;
     --color-border: #cccccc;
     --color-transparent: transparent;
+
+    /* Theme Brand Green Tokens */
+    --green-deep: #004724;
+    --green-brand: #0d5c1b;
+    --green-bright: #007a33;
+    --green-header: #0a6438;
+    --green-cta-deep: #004b2b;
+    --green-shadow: #064024;
+    --green-heading: #0b613f;
+    --green-submit: #0a5c36;
+    --green-zero: #057544;
+    --green-footer: #004427;
+    --green-benefit-ink: #00381d;
+
+    /* Mint & Gradient Stops */
+    --hero-outer-green: #2eb280;
+    --hero-control-green: #168b61;
+    --hero-card-mint: #8fcea5;
+    --mint-light: #e8f5ed;
+    --mint-mid: #dcf0e3;
+    --mint-strong: #76c596;
+    --jade-start: #27a574;
+    --jade-end: #def1e6;
+    --mint-schedule-top: #daf1e3;
+    --mint-schedule-mid: #aee0c5;
+    --language-panel-end: #f5fcf8;
+
+    /* Yellow Tokens */
+    --yellow: #ffd500;
+    --yellow-light: #ffea75;
+    --yellow-pale: #fdf5a0;
+    --yellow-benefit-top: #ffd700;
+    --yellow-benefit-bottom: #ffbe00;
+    --yellow-ribbon-border: #fff6a8;
+    --yellow-schedule-pill-border: #fff8b0;
+    --yellow-schedule-pill-bottom: #f5be00;
+    --yellow-header-top: #fff275;
+    --yellow-header-mid: #ffd800;
+    --yellow-header-bottom: #f5c400;
+
+    /* Neutrals & Highlights */
+    --pink: #f91362;
+    --white: #ffffff;
+    --ink: #163325;
+    --muted: #557267;
+
+    /* Typography Tokens */
+    --font-display: "League Spartan", "Montserrat", "Arial Black", Arial, sans-serif;
+    --font-body: "Montserrat", Arial, sans-serif;
+    --font-impact: "Arial Black", Arial, sans-serif;
+
+    /* Spacing & Layout Tokens */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+    --radius-control: 7px;
+    --radius-card: 20px;
+    --radius-pill: 999px;
 }
